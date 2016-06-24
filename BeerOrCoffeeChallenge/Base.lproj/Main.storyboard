@@ -81,6 +81,10 @@
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-DB-5bh" userLabel="Bebidas Picker View">
                                 <rect key="frame" x="83" y="347" width="154" height="121"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yue-fU-rmB"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1In-i8-9KU"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
