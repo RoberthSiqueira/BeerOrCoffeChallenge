@@ -15,6 +15,7 @@
 		201D7C6D1D1CC77800C62D88 /* BCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C6C1D1CC77800C62D88 /* BCApi.swift */; };
 		201D7C6F1D1CDAA100C62D88 /* BCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */; };
 		201D7C731D1CDCC300C62D88 /* BCBeverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C721D1CDCC300C62D88 /* BCBeverage.swift */; };
+		201D7C751D1D68A000C62D88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D7C741D1D689F00C62D88 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		201D7C6C1D1CC77800C62D88 /* BCApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCApi.swift; sourceTree = "<group>"; };
 		201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCLocation.swift; sourceTree = "<group>"; };
 		201D7C721D1CDCC300C62D88 /* BCBeverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCBeverage.swift; sourceTree = "<group>"; };
+		201D7C741D1D689F00C62D88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201D7C751D1D68A000C62D88 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 		201D7C4B1D1CBFDE00C62D88 = {
 			isa = PBXGroup;
 			children = (
+				201D7C741D1D689F00C62D88 /* MapKit.framework */,
 				201D7C561D1CBFDF00C62D88 /* BeerOrCoffeeChallenge */,
 				201D7C551D1CBFDF00C62D88 /* Products */,
 			);
