@@ -8,9 +8,10 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 import Alamofire
 
-class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
     @IBOutlet var locationTextField: UITextField!
     @IBOutlet var streetTextField: UITextField!
     @IBOutlet var districtTextField: UITextField!
