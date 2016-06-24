@@ -12,7 +12,6 @@
 		201D7C5D1D1CBFE000C62D88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D7C5B1D1CBFE000C62D88 /* Main.storyboard */; };
 		201D7C5F1D1CBFE000C62D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201D7C5E1D1CBFE000C62D88 /* Assets.xcassets */; };
 		201D7C621D1CBFE000C62D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D7C601D1CBFE000C62D88 /* LaunchScreen.storyboard */; };
-		201D7C6D1D1CC77800C62D88 /* BCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C6C1D1CC77800C62D88 /* BCApi.swift */; };
 		201D7C6F1D1CDAA100C62D88 /* BCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */; };
 		201D7C751D1D68A000C62D88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D7C741D1D689F00C62D88 /* MapKit.framework */; };
 /* End PBXBuildFile section */
@@ -25,7 +24,6 @@
 		201D7C5E1D1CBFE000C62D88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		201D7C611D1CBFE000C62D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		201D7C631D1CBFE000C62D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		201D7C6C1D1CC77800C62D88 /* BCApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCApi.swift; sourceTree = "<group>"; };
 		201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCLocation.swift; sourceTree = "<group>"; };
 		201D7C741D1D689F00C62D88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -76,7 +74,6 @@
 		201D7C691D1CC05F00C62D88 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				201D7C6C1D1CC77800C62D88 /* BCApi.swift */,
 				201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */,
 			);
 			name = model;
@@ -171,7 +168,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				201D7C6D1D1CC77800C62D88 /* BCApi.swift in Sources */,
 				201D7C6F1D1CDAA100C62D88 /* BCLocation.swift in Sources */,
 				201D7C5A1D1CBFDF00C62D88 /* BCViewController.swift in Sources */,
 				201D7C581D1CBFDF00C62D88 /* AppDelegate.swift in Sources */,
