@@ -15,6 +15,7 @@
 		201D7C6F1D1CDAA100C62D88 /* BCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */; };
 		201D7C751D1D68A000C62D88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D7C741D1D689F00C62D88 /* MapKit.framework */; };
 		20C414C51D1DA43B000420F9 /* BCAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C414C41D1DA439000420F9 /* BCAlert.swift */; };
+		20C414C91D1DC07D000420F9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C414C81D1DC07D000420F9 /* CoreLocation.framework */; };
 		8CAC8A9AD816578A40307BEE /* Pods_BeerOrCoffeeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF7A03E1083CF42F8E2144B /* Pods_BeerOrCoffeeChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCLocation.swift; sourceTree = "<group>"; };
 		201D7C741D1D689F00C62D88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		20C414C41D1DA439000420F9 /* BCAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCAlert.swift; sourceTree = "<group>"; };
+		20C414C81D1DC07D000420F9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2AF7A03E1083CF42F8E2144B /* Pods_BeerOrCoffeeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerOrCoffeeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5675B0F693E620524F2AB5B /* Pods-BeerOrCoffeeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerOrCoffeeChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerOrCoffeeChallenge/Pods-BeerOrCoffeeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		DD320D5AC16BD9D0E13EFB28 /* Pods-BeerOrCoffeeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerOrCoffeeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerOrCoffeeChallenge/Pods-BeerOrCoffeeChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C414C91D1DC07D000420F9 /* CoreLocation.framework in Frameworks */,
 				201D7C751D1D68A000C62D88 /* MapKit.framework in Frameworks */,
 				8CAC8A9AD816578A40307BEE /* Pods_BeerOrCoffeeChallenge.framework in Frameworks */,
 			);
@@ -108,6 +111,7 @@
 		2E96AC5FB06B5AE640B51B1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20C414C81D1DC07D000420F9 /* CoreLocation.framework */,
 				2AF7A03E1083CF42F8E2144B /* Pods_BeerOrCoffeeChallenge.framework */,
 			);
 			name = Frameworks;
