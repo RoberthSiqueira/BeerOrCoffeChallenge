@@ -35,7 +35,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zjf-3W-zHx" userLabel="Cidade TextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rua, número" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zjf-3W-zHx" userLabel="Cidade TextField">
                                 <rect key="frame" x="20" y="147" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -75,17 +75,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-DB-5bh" userLabel="Bebidas Picker View">
-                                <rect key="frame" x="83" y="347" width="154" height="121"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfa-uo-pDI" userLabel="Salvar Local Button">
                                 <rect key="frame" x="115" y="496" width="101" height="30"/>
                                 <state key="normal" title="Salvar Local"/>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-DB-5bh" userLabel="Bebidas Picker View">
+                                <rect key="frame" x="83" y="347" width="154" height="121"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="beverage" destination="8Ey-DB-5bh" id="cGd-9e-XgS"/>
+                        <outlet property="cityTextField" destination="Oy1-5r-TdU" id="Trv-eE-rTP"/>
+                        <outlet property="countryTextField" destination="M7Q-GC-sbu" id="feE-Qh-PcA"/>
+                        <outlet property="districtTextField" destination="vdf-rA-mH7" id="Dbt-Va-iOg"/>
+                        <outlet property="latitudeTextField" destination="LtP-NO-bW3" id="r8n-fs-NLe"/>
+                        <outlet property="localTextField" destination="ph8-kW-108" id="Oip-hn-xUl"/>
+                        <outlet property="longitudeTextField" destination="Z9P-eq-jH1" id="oHs-qn-mlF"/>
+                        <outlet property="streetTextField" destination="Zjf-3W-zHx" id="vXt-jD-C8A"/>
+                        <outlet property="ufTextField" destination="v1H-Vf-cUf" id="sN1-Gb-PU5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

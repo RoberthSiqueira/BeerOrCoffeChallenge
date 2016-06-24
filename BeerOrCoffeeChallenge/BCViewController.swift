@@ -9,6 +9,16 @@
 import UIKit
 
 class BCViewController: UIViewController {
+    @IBOutlet var localTextField: UITextField!
+    @IBOutlet var streetTextField: UITextField!
+    @IBOutlet var districtTextField: UITextField!
+    @IBOutlet var cityTextField: UITextField!
+    @IBOutlet var ufTextField: UITextField!
+    @IBOutlet var countryTextField: UITextField!
+    @IBOutlet var latitudeTextField: UITextField!
+    @IBOutlet var longitudeTextField: UITextField!
+    @IBOutlet var beverage: UIPickerView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
