@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-DB-5bh" userLabel="Bebidas Picker View">
-                                <rect key="frame" x="20" y="347" width="280" height="65"/>
+                                <rect key="frame" x="20" y="347" width="280" height="121"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="yue-fU-rmB"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1In-i8-9KU"/>
@@ -91,6 +91,10 @@
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Vip-Vl-mel" appends="YES" id="cBs-gP-B1R"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -106,6 +110,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Vip-Vl-mel" userLabel="Touch">
+                    <connections>
+                        <action selector="touch:" destination="BYZ-38-t0r" id="0Qk-Yn-LfB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="227" y="267"/>
         </scene>

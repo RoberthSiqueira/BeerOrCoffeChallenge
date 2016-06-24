@@ -27,6 +27,11 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     var beverageValue: Int!
     var manager:CLLocationManager!
     
+    @IBAction func touch(sender: UITapGestureRecognizer) {
+//        UIApplication.sharedApplication().sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, forEvent:nil)
+        self.view.endEditing(true)
+    }
+    
     @IBAction func addLocation() {
         if let location = getLocationFromForm() {
             let query = location.name + location.getAddress()
