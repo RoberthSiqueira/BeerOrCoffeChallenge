@@ -67,23 +67,23 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LtP-NO-bW3" userLabel="Latitude TextField">
                                 <rect key="frame" x="20" y="269" width="135" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z9P-eq-jH1" userLabel="Longitude TextField">
                                 <rect key="frame" x="165" y="269" width="135" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfa-uo-pDI" userLabel="Salvar Local Button">
-                                <rect key="frame" x="115" y="496" width="101" height="30"/>
+                                <rect key="frame" x="110" y="476" width="101" height="30"/>
                                 <state key="normal" title="Salvar Local"/>
                                 <connections>
                                     <action selector="addLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGT-fb-1dr"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-DB-5bh" userLabel="Bebidas Picker View">
-                                <rect key="frame" x="83" y="347" width="154" height="121"/>
+                                <rect key="frame" x="20" y="347" width="280" height="65"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="yue-fU-rmB"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1In-i8-9KU"/>

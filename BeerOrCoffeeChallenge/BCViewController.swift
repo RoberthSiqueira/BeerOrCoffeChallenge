@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Contacts
 import Alamofire
 
 class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
@@ -24,6 +25,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     
     var beverageArray = ["Cerveja", "Café", "Ambos"]
     var beverageValue: Int!
+    var manager:CLLocationManager!
     
     @IBAction func addLocation() {
         if let location = getLocationFromForm() {
@@ -86,6 +88,32 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        manager = CLLocationManager()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestAlwaysAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error) -> Void in
+            if error != nil {
+                Alert(controller: self).show()
+                return
+            } else {
+                let lat = Double((manager.location?.coordinate.latitude)!)
+                let long = Double((manager.location?.coordinate.longitude)!)
+                let place = placemarks?.last
+                self.streetTextField.text = place!.addressDictionary?["Street"] as? String
+                self.districtTextField.text = place!.addressDictionary?["SubLocality"] as? String
+                self.cityTextField.text = place!.addressDictionary?["City"] as? String
+                self.ufTextField.text = place!.addressDictionary?["State"] as? String
+                self.countryTextField.text = place!.addressDictionary?["Country"] as? String
+                self.latitudeTextField.text = String(lat)
+                self.longitudeTextField.text = String(long)
+            }
+        })
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
