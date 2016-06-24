@@ -33,6 +33,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     
     func getLocationFromForm() -> Location? {
         if locationTextField == nil || streetTextField == nil || districtTextField == nil || cityTextField == nil || ufTextField == nil || countryTextField == nil || latitudeTextField == nil || longitudeTextField == nil {
+            Alert(controller: self).show("Por favor, preencha todos os campos")
             return nil
         } else {
             let name = locationTextField!.text
@@ -57,11 +58,10 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         
         search.startWithCompletionHandler({ (response, error) in
             if error != nil {
-                print("Error occured in search: \(error!.localizedDescription)")
+                Alert(controller: self).show()
             } else if response?.mapItems.count == 0 {
-                print("Não deu pra encontrar")
+                Alert(controller: self).show("Local não encontrado. Verifique os dados informados.")
             } else {
-                print("Matches found")
                 self.requestApi()
             }
         })
@@ -74,7 +74,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
                                                 "address": location.getAddress(),
                                                 "latitude": -7,
                                                 "longitude": 27,
-                                                "beverage": 3]
+                                                "beverage": location.beverage]
             let headers = ["Content-Type":"application/json",
                            "x-api-key":"IfXJnQVdjo1fI4z6OQTWB6RPJ8Qs4JbcaDOZ83vt"]
             Alamofire.request(.POST, api, parameters: paramJson, encoding:.JSON, headers: headers).responseJSON { response in
