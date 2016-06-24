@@ -9,8 +9,8 @@
 import Foundation
 
 class Beverage {
-    let name: String
-    init(name: String) {
-        self.name = name
+    let value: Int
+    init(value: Int) {
+        self.value = value
     }
 }

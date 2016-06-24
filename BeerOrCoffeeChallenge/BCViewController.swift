@@ -9,7 +9,7 @@
 import UIKit
 
 class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet var localTextField: UITextField!
+    @IBOutlet var locationTextField: UITextField!
     @IBOutlet var streetTextField: UITextField!
     @IBOutlet var districtTextField: UITextField!
     @IBOutlet var cityTextField: UITextField!
@@ -18,30 +18,54 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     @IBOutlet var latitudeTextField: UITextField!
     @IBOutlet var longitudeTextField: UITextField!
     @IBOutlet var beverage: UIPickerView!
-    var beverageDictionary = [1:"Cerveja", 2:"Café", 3:"Ambos"]
+    var beverageArray = ["Cerveja", "Café", "Ambos"]
+    var beverageValue: Int!
+    
+    @IBAction func addLocation() {
+        if let location = getLocationFromForm() {
+            
+        }
+    }
+    
+    func getLocationFromForm() -> Location? {
+        if locationTextField == nil || streetTextField == nil || districtTextField == nil || cityTextField == nil || ufTextField == nil || countryTextField == nil || latitudeTextField == nil || longitudeTextField == nil {
+            return nil
+        } else {
+            let location = locationTextField!.text
+            let street = streetTextField!.text
+            let district = districtTextField!.text
+            let city = cityTextField!.text
+            let uf = ufTextField!.text
+            let country = countryTextField!.text
+            let latitude = Double(latitudeTextField.text!)
+            let longitude = Double(longitudeTextField!.text!)
+            
+            let place = Location(location: location!, street: street!, district: district!, city: city!, uf: uf!, country: country!, latitude: latitude!, longitude: longitude!, beverage: beverageValue)
+            
+            return place
+        }
+        
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return beverageDictionary.count
+        return beverageArray.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return beverageDictionary[row]
+        return beverageArray[row]
     }
-
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        beverageValue = row + 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

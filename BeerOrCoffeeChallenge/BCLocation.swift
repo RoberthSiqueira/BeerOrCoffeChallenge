@@ -10,23 +10,24 @@ import Foundation
 
 class Location {
     let location: String
-    let address: String
+    let street: String
     let district: String
     let city: String
     let uf: String
     let country: String
-    let latitude: String
-    let longitude: String
-    var beverage = Array<Beverage>()
-    init(location: String, address: String, district: String, city: String, uf: String, country: String, latitude: String, longitude: String) {
+    let latitude: Double
+    let longitude: Double
+    let beverage: Int
+    init(location: String, street: String, district: String, city: String, uf: String, country: String, latitude: Double, longitude: Double, beverage: Int) {
         self.location = location
-        self.address = address
+        self.street = street
         self.district = district
         self.city = city
         self.uf = uf
         self.country = country
         self.latitude = latitude
         self.longitude = longitude
+        self.beverage = beverage
     }
     
 }

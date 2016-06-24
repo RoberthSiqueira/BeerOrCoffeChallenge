@@ -78,6 +78,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfa-uo-pDI" userLabel="Salvar Local Button">
                                 <rect key="frame" x="115" y="496" width="101" height="30"/>
                                 <state key="normal" title="Salvar Local"/>
+                                <connections>
+                                    <action selector="addLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGT-fb-1dr"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-DB-5bh" userLabel="Bebidas Picker View">
                                 <rect key="frame" x="83" y="347" width="154" height="121"/>
@@ -96,7 +99,7 @@
                         <outlet property="countryTextField" destination="M7Q-GC-sbu" id="feE-Qh-PcA"/>
                         <outlet property="districtTextField" destination="vdf-rA-mH7" id="Dbt-Va-iOg"/>
                         <outlet property="latitudeTextField" destination="LtP-NO-bW3" id="r8n-fs-NLe"/>
-                        <outlet property="localTextField" destination="ph8-kW-108" id="Oip-hn-xUl"/>
+                        <outlet property="locationTextField" destination="ph8-kW-108" id="1fX-OJ-KY6"/>
                         <outlet property="longitudeTextField" destination="Z9P-eq-jH1" id="oHs-qn-mlF"/>
                         <outlet property="streetTextField" destination="Zjf-3W-zHx" id="vXt-jD-C8A"/>
                         <outlet property="ufTextField" destination="v1H-Vf-cUf" id="sN1-Gb-PU5"/>
