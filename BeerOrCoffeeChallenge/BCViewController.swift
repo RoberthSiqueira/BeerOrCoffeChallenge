@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet var locationTextField: UITextField!
@@ -23,7 +24,31 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     
     @IBAction func addLocation() {
         if let location = getLocationFromForm() {
+            let request = MKLocalSearchRequest()
+            let query = (location.location +
+                " " + location.street +
+                " " + location.district +
+                " " + location.street +
+                " " + location.district +
+                " " + location.city +
+                " " + location.uf +
+                " " + location.country)
+            request.naturalLanguageQuery = query
+            let search = MKLocalSearch(request: request)
             
+            search.startWithCompletionHandler({ (response, error) in
+                if error != nil {
+                    print("Error occured in search: \(error!.localizedDescription)")
+                } else if response?.mapItems.count == 0 {
+                    print("Não deu pra encontrar")
+                } else {
+                    print("Matches found")
+                    for item in response!.mapItems {
+                        print("Name = \(item.name)")
+                        print("Phone = \(item.phoneNumber)")
+                    }
+                }
+            })
         }
     }
     
