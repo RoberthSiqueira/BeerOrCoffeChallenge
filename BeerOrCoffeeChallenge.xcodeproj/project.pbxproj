@@ -14,7 +14,6 @@
 		201D7C621D1CBFE000C62D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D7C601D1CBFE000C62D88 /* LaunchScreen.storyboard */; };
 		201D7C6D1D1CC77800C62D88 /* BCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C6C1D1CC77800C62D88 /* BCApi.swift */; };
 		201D7C6F1D1CDAA100C62D88 /* BCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */; };
-		201D7C731D1CDCC300C62D88 /* BCBeverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C721D1CDCC300C62D88 /* BCBeverage.swift */; };
 		201D7C751D1D68A000C62D88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D7C741D1D689F00C62D88 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		201D7C631D1CBFE000C62D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201D7C6C1D1CC77800C62D88 /* BCApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCApi.swift; sourceTree = "<group>"; };
 		201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCLocation.swift; sourceTree = "<group>"; };
-		201D7C721D1CDCC300C62D88 /* BCBeverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCBeverage.swift; sourceTree = "<group>"; };
 		201D7C741D1D689F00C62D88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -80,7 +78,6 @@
 			children = (
 				201D7C6C1D1CC77800C62D88 /* BCApi.swift */,
 				201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */,
-				201D7C721D1CDCC300C62D88 /* BCBeverage.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -174,7 +171,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				201D7C731D1CDCC300C62D88 /* BCBeverage.swift in Sources */,
 				201D7C6D1D1CC77800C62D88 /* BCApi.swift in Sources */,
 				201D7C6F1D1CDAA100C62D88 /* BCLocation.swift in Sources */,
 				201D7C5A1D1CBFDF00C62D88 /* BCViewController.swift in Sources */,
