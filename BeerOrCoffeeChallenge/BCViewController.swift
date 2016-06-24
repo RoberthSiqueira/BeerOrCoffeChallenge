@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BCViewController.swift
 //  BeerOrCoffeeChallenge
 //
 //  Created by Roberth Siqueira on 23/06/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BCViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
