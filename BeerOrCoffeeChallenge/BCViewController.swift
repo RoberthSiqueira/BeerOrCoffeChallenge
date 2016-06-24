@@ -19,12 +19,12 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     @IBOutlet var latitudeTextField: UITextField!
     @IBOutlet var longitudeTextField: UITextField!
     @IBOutlet var beverage: UIPickerView!
+    
     var beverageArray = ["Cerveja", "Café", "Ambos"]
     var beverageValue: Int!
     
     @IBAction func addLocation() {
         if let location = getLocationFromForm() {
-            let request = MKLocalSearchRequest()
             let query = (location.location +
                 " " + location.street +
                 " " + location.district +
@@ -33,22 +33,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
                 " " + location.city +
                 " " + location.uf +
                 " " + location.country)
-            request.naturalLanguageQuery = query
-            let search = MKLocalSearch(request: request)
-            
-            search.startWithCompletionHandler({ (response, error) in
-                if error != nil {
-                    print("Error occured in search: \(error!.localizedDescription)")
-                } else if response?.mapItems.count == 0 {
-                    print("Não deu pra encontrar")
-                } else {
-                    print("Matches found")
-                    for item in response!.mapItems {
-                        print("Name = \(item.name)")
-                        print("Phone = \(item.phoneNumber)")
-                    }
-                }
-            })
+            foundLocal(query)
         }
     }
     
@@ -69,7 +54,30 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             
             return place
         }
+    }
+    
+    func foundLocal(query: String) {
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = query
+        let search = MKLocalSearch(request: request)
         
+        search.startWithCompletionHandler({ (response, error) in
+            if error != nil {
+                print("Error occured in search: \(error!.localizedDescription)")
+            } else if response?.mapItems.count == 0 {
+                print("Não deu pra encontrar")
+            } else {
+                print("Matches found")
+                for item in response!.mapItems {
+                    print("Name = \(item.name)")
+                    print("Phone = \(item.phoneNumber)")
+                }
+            }
+        })
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -87,11 +95,5 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         beverageValue = row + 1
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
 }
 

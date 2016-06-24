@@ -14,6 +14,7 @@
 		201D7C621D1CBFE000C62D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D7C601D1CBFE000C62D88 /* LaunchScreen.storyboard */; };
 		201D7C6F1D1CDAA100C62D88 /* BCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */; };
 		201D7C751D1D68A000C62D88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D7C741D1D689F00C62D88 /* MapKit.framework */; };
+		8CAC8A9AD816578A40307BEE /* Pods_BeerOrCoffeeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF7A03E1083CF42F8E2144B /* Pods_BeerOrCoffeeChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		201D7C631D1CBFE000C62D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201D7C6E1D1CDAA000C62D88 /* BCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCLocation.swift; sourceTree = "<group>"; };
 		201D7C741D1D689F00C62D88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2AF7A03E1083CF42F8E2144B /* Pods_BeerOrCoffeeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerOrCoffeeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5675B0F693E620524F2AB5B /* Pods-BeerOrCoffeeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerOrCoffeeChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerOrCoffeeChallenge/Pods-BeerOrCoffeeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		DD320D5AC16BD9D0E13EFB28 /* Pods-BeerOrCoffeeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerOrCoffeeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerOrCoffeeChallenge/Pods-BeerOrCoffeeChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				201D7C751D1D68A000C62D88 /* MapKit.framework in Frameworks */,
+				8CAC8A9AD816578A40307BEE /* Pods_BeerOrCoffeeChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 				201D7C741D1D689F00C62D88 /* MapKit.framework */,
 				201D7C561D1CBFDF00C62D88 /* BeerOrCoffeeChallenge */,
 				201D7C551D1CBFDF00C62D88 /* Products */,
+				66109E9915E1F448C374A9B3 /* Pods */,
+				2E96AC5FB06B5AE640B51B1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +102,23 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
+		2E96AC5FB06B5AE640B51B1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AF7A03E1083CF42F8E2144B /* Pods_BeerOrCoffeeChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66109E9915E1F448C374A9B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5675B0F693E620524F2AB5B /* Pods-BeerOrCoffeeChallenge.debug.xcconfig */,
+				DD320D5AC16BD9D0E13EFB28 /* Pods-BeerOrCoffeeChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +126,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 201D7C661D1CBFE000C62D88 /* Build configuration list for PBXNativeTarget "BeerOrCoffeeChallenge" */;
 			buildPhases = (
+				9E0DEA16C54EFA7E0E060CB1 /* [CP] Check Pods Manifest.lock */,
 				201D7C501D1CBFDE00C62D88 /* Sources */,
 				201D7C511D1CBFDE00C62D88 /* Frameworks */,
 				201D7C521D1CBFDE00C62D88 /* Resources */,
+				01416924D9AF77204F0045E8 /* [CP] Embed Pods Frameworks */,
+				DF7300A69331C7717D9E1520 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,6 +189,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01416924D9AF77204F0045E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeerOrCoffeeChallenge/Pods-BeerOrCoffeeChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E0DEA16C54EFA7E0E060CB1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF7300A69331C7717D9E1520 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeerOrCoffeeChallenge/Pods-BeerOrCoffeeChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		201D7C501D1CBFDE00C62D88 /* Sources */ = {
@@ -281,6 +356,7 @@
 		};
 		201D7C671D1CBFE000C62D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5675B0F693E620524F2AB5B /* Pods-BeerOrCoffeeChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -295,6 +371,7 @@
 		};
 		201D7C681D1CBFE000C62D88 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD320D5AC16BD9D0E13EFB28 /* Pods-BeerOrCoffeeChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
