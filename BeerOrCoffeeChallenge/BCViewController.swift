@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Alamofire
 
 class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet var locationTextField: UITextField!
@@ -25,14 +26,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     
     @IBAction func addLocation() {
         if let location = getLocationFromForm() {
-            let query = (location.location +
-                " " + location.street +
-                " " + location.district +
-                " " + location.street +
-                " " + location.district +
-                " " + location.city +
-                " " + location.uf +
-                " " + location.country)
+            let query = location.name + location.getAddress()
             foundLocal(query)
         }
     }
@@ -41,7 +35,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         if locationTextField == nil || streetTextField == nil || districtTextField == nil || cityTextField == nil || ufTextField == nil || countryTextField == nil || latitudeTextField == nil || longitudeTextField == nil {
             return nil
         } else {
-            let location = locationTextField!.text
+            let name = locationTextField!.text
             let street = streetTextField!.text
             let district = districtTextField!.text
             let city = cityTextField!.text
@@ -50,7 +44,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             let latitude = Double(latitudeTextField.text!)
             let longitude = Double(longitudeTextField!.text!)
             
-            let place = Location(location: location!, street: street!, district: district!, city: city!, uf: uf!, country: country!, latitude: latitude!, longitude: longitude!, beverage: beverageValue)
+            let place = Location(name: name!, street: street!, district: district!, city: city!, uf: uf!, country: country!, latitude: latitude!, longitude: longitude!, beverage: beverageValue)
             
             return place
         }
@@ -68,12 +62,25 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
                 print("Não deu pra encontrar")
             } else {
                 print("Matches found")
-                for item in response!.mapItems {
-                    print("Name = \(item.name)")
-                    print("Phone = \(item.phoneNumber)")
-                }
+                self.requestApi()
             }
         })
+    }
+    
+    func requestApi() {
+        if let location = self.getLocationFromForm() {
+            let api = "https://c7q5vyiew7.execute-api.us-east-1.amazonaws.com/prod/places"
+            let paramJson: [String:AnyObject] = ["name": location.name,
+                                                "address": location.getAddress(),
+                                                "latitude": -7,
+                                                "longitude": 27,
+                                                "beverage": 3]
+            let headers = ["Content-Type":"application/json",
+                           "x-api-key":"IfXJnQVdjo1fI4z6OQTWB6RPJ8Qs4JbcaDOZ83vt"]
+            Alamofire.request(.POST, api, parameters: paramJson, encoding:.JSON, headers: headers).responseJSON { response in
+                print(response.result.value)
+            }
+        }
     }
     
     override func viewDidLoad() {

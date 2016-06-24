@@ -9,7 +9,7 @@
 import Foundation
 
 class Location {
-    let location: String
+    let name: String
     let street: String
     let district: String
     let city: String
@@ -18,8 +18,8 @@ class Location {
     let latitude: Double
     let longitude: Double
     let beverage: Int
-    init(location: String, street: String, district: String, city: String, uf: String, country: String, latitude: Double, longitude: Double, beverage: Int) {
-        self.location = location
+    init(name: String, street: String, district: String, city: String, uf: String, country: String, latitude: Double, longitude: Double, beverage: Int) {
+        self.name = name
         self.street = street
         self.district = district
         self.city = city
@@ -29,5 +29,12 @@ class Location {
         self.longitude = longitude
         self.beverage = beverage
     }
-    
+    func getAddress() -> String {
+        let address = (street +
+            " - " + district +
+            " - " + city +
+            ", " + uf +
+            ". " + country)
+        return address
+    }
 }
