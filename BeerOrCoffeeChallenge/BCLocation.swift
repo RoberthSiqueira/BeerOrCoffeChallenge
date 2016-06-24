@@ -17,6 +17,7 @@ class Location {
     let country: String
     let latitude: String
     let longitude: String
+    var beverage = Array<Beverage>()
     init(location: String, address: String, district: String, city: String, uf: String, country: String, latitude: String, longitude: String) {
         self.location = location
         self.address = address
