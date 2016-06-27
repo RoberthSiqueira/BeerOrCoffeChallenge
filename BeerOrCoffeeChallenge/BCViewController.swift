@@ -12,7 +12,7 @@ import CoreLocation
 import Contacts
 import Alamofire
 
-class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
+class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate, UITextFieldDelegate {
     @IBOutlet var locationTextField: UITextField!
     @IBOutlet var streetTextField: UITextField!
     @IBOutlet var districtTextField: UITextField!
@@ -104,7 +104,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error) -> Void in
             if error != nil {
-                Alert(controller: self).show()
+//                Alert(controller: self).show()
                 return
             } else {
                 let lat = Double((manager.location?.coordinate.latitude)!)
@@ -119,6 +119,26 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
                 self.longitudeTextField.text = String(long)
             }
         })
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case locationTextField:
+            streetTextField.becomeFirstResponder()
+        case streetTextField:
+            districtTextField.becomeFirstResponder()
+        case districtTextField:
+            cityTextField.becomeFirstResponder()
+        case cityTextField:
+            ufTextField.becomeFirstResponder()
+        case ufTextField:
+            countryTextField.becomeFirstResponder()
+        case countryTextField:
+            countryTextField.resignFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        return true
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
