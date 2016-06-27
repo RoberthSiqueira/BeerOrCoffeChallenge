@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import CoreLocation
-import Contacts
 import Alamofire
 
 class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate, UITextFieldDelegate {
@@ -28,14 +27,13 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     var manager:CLLocationManager!
     
     @IBAction func touch(sender: UITapGestureRecognizer) {
-//        UIApplication.sharedApplication().sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, forEvent:nil)
         self.view.endEditing(true)
     }
     
     @IBAction func addLocation() {
         if let location = getLocationFromForm() {
-            let query = location.name + location.getAddress()
-            foundLocal(query)
+            let query = location.queryForSearch()
+            findLocal(query)
         }
     }
     
@@ -54,12 +52,11 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             let longitude = Double(longitudeTextField!.text!)
             
             let place = Location(name: name!, street: street!, district: district!, city: city!, uf: uf!, country: country!, latitude: latitude!, longitude: longitude!, beverage: beverageValue)
-            
             return place
         }
     }
     
-    func foundLocal(query: String) {
+    func findLocal(query: String) {
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = query
         let search = MKLocalSearch(request: request)
@@ -80,15 +77,44 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             let api = "https://c7q5vyiew7.execute-api.us-east-1.amazonaws.com/prod/places"
             let paramJson: [String:AnyObject] = ["name": location.name,
                                                 "address": location.getAddress(),
-                                                "latitude": -7,
-                                                "longitude": 27,
+                                                "latitude": location.latitude,
+                                                "longitude": location.longitude,
                                                 "beverage": location.beverage]
             let headers = ["Content-Type":"application/json",
                            "x-api-key":"IfXJnQVdjo1fI4z6OQTWB6RPJ8Qs4JbcaDOZ83vt"]
-            Alamofire.request(.POST, api, parameters: paramJson, encoding:.JSON, headers: headers).responseJSON { response in
-                print(response.result.value)
-            }
+            Alamofire.request(.POST, api, parameters: paramJson, encoding:.JSON, headers: headers).responseJSON(completionHandler: { response in switch response.result {
+                case .Success:
+                    Alert(controller: self).show("Local salvo com sucesso!")
+                case .Failure:
+                    Alert(controller: self).show()
+                }
+            })
         }
+    }
+    
+    func findLatitudeAndLongitude() {
+        let name = locationTextField!.text! + " "
+        let street = streetTextField!.text! + " "
+        let district = districtTextField!.text! + " "
+        let city = cityTextField!.text! + " "
+        let uf = ufTextField!.text! + " "
+        let country = countryTextField!.text
+        let query = name + street + district + city + uf + country!
+        getLatitudeAndLongitude(query)
+    }
+    
+    func getLatitudeAndLongitude(query: String) {
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = query
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(query, completionHandler: {(placemarks, error) in
+            if placemarks!.count > 0 {
+                let placemark = placemarks![0]
+                let location = placemark.location
+                self.latitudeTextField.text = String(location!.coordinate.latitude)
+                self.longitudeTextField.text = String(location!.coordinate.longitude)
+            }
+        })
     }
     
     override func viewDidLoad() {
@@ -104,7 +130,6 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error) -> Void in
             if error != nil {
-//                Alert(controller: self).show()
                 return
             } else {
                 let lat = Double((manager.location?.coordinate.latitude)!)
@@ -134,8 +159,10 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         case ufTextField:
             countryTextField.becomeFirstResponder()
         case countryTextField:
+            findLatitudeAndLongitude()
             countryTextField.resignFirstResponder()
         default:
+            findLatitudeAndLongitude()
             textField.resignFirstResponder()
         }
         return true

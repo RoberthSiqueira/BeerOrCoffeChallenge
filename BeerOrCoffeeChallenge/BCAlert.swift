@@ -15,7 +15,7 @@ class Alert {
         self.controller = controller
     }
     func show(message:String = "Erro inesperado.") {
-        let details = UIAlertController(title: "Desculpe",
+        let details = UIAlertController(title: "Aviso",
                                         message: message,
                                         preferredStyle: UIAlertControllerStyle.Alert)
         let cancel = UIAlertAction(title: "OK",

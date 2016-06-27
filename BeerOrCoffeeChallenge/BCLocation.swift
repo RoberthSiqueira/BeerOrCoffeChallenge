@@ -37,4 +37,8 @@ class Location {
             ". " + country)
         return address
     }
+    func queryForSearch() -> String {
+        let query = name + getAddress()
+        return query
+    }
 }
