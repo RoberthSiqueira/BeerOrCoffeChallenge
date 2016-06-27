@@ -34,6 +34,8 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         if let location = getLocationFromForm() {
             let query = location.queryForSearch()
             findLocal(query)
+        } else {
+            return
         }
     }
     
@@ -60,7 +62,6 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = query
         let search = MKLocalSearch(request: request)
-        
         search.startWithCompletionHandler({ (response, error) in
             if error != nil {
                 Alert(controller: self).show()
@@ -85,11 +86,23 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             Alamofire.request(.POST, api, parameters: paramJson, encoding:.JSON, headers: headers).responseJSON(completionHandler: { response in switch response.result {
                 case .Success:
                     Alert(controller: self).show("Local salvo com sucesso!")
+                    self.clearForm()
                 case .Failure:
                     Alert(controller: self).show()
                 }
             })
         }
+    }
+    
+    func clearForm() {
+        locationTextField.text = nil
+        streetTextField.text = nil
+        districtTextField.text = nil
+        cityTextField.text = nil
+        ufTextField.text = nil
+        countryTextField.text = nil
+        latitudeTextField.text = nil
+        longitudeTextField.text = nil
     }
     
     func findLatitudeAndLongitude() {
@@ -113,6 +126,8 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
                 let location = placemark.location
                 self.latitudeTextField.text = String(location!.coordinate.latitude)
                 self.longitudeTextField.text = String(location!.coordinate.longitude)
+            } else {
+                return
             }
         })
     }
