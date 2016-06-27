@@ -88,7 +88,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
                     Alert(controller: self).show("Local salvo com sucesso!")
                     self.clearForm()
                 case .Failure:
-                    Alert(controller: self).show()
+                    Alert(controller: self).show("Erro inesperado. Por favor tente novamente em alguns minutos")
                 }
             })
         }
