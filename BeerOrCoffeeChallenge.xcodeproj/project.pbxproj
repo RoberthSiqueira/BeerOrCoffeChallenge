@@ -77,7 +77,6 @@
 				201D7C6B1D1CC07000C62D88 /* controller */,
 				201D7C571D1CBFDF00C62D88 /* AppDelegate.swift */,
 				201D7C5E1D1CBFE000C62D88 /* Assets.xcassets */,
-				201D7C601D1CBFE000C62D88 /* LaunchScreen.storyboard */,
 				201D7C631D1CBFE000C62D88 /* Info.plist */,
 			);
 			path = BeerOrCoffeeChallenge;
@@ -96,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				201D7C5B1D1CBFE000C62D88 /* Main.storyboard */,
+				201D7C601D1CBFE000C62D88 /* LaunchScreen.storyboard */,
 			);
 			name = view;
 			sourceTree = "<group>";
