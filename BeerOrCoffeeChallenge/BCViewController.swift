@@ -157,6 +157,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
                 self.countryTextField.text = place!.addressDictionary?["Country"] as? String
                 self.latitudeTextField.text = String(lat)
                 self.longitudeTextField.text = String(long)
+                self.manager.stopUpdatingLocation()
             }
         })
     }
