@@ -27,6 +27,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     var manager:CLLocationManager!
     
     @IBAction func touch(sender: UITapGestureRecognizer) {
+        self.findLatitudeAndLongitude()
         self.view.endEditing(true)
     }
     

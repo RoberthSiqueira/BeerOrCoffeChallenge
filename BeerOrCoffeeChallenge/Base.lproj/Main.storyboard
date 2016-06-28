@@ -23,7 +23,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rU-Xf-8jg" userLabel="Form View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbx-IU-VGx" userLabel="Local Dark View">
+                                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbx-IU-VGx" userLabel="Local Dark View">
                                         <rect key="frame" x="0.0" y="64" width="320" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUa-1D-XIu" userLabel="Local Label">
@@ -37,7 +37,7 @@
                                                 <rect key="frame" x="8" y="32" width="304" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="l3x-te-emo"/>
                                                 </connections>
@@ -53,7 +53,7 @@
                                             <constraint firstAttribute="height" constant="72" id="sDH-uv-lNM"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-2S-Jg0" userLabel="Endereço Dark View">
+                                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-2S-Jg0" userLabel="Endereço Dark View">
                                         <rect key="frame" x="0.0" y="144" width="320" height="171"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw7-8a-7A5" userLabel="Endereço Label">
@@ -67,7 +67,7 @@
                                                 <rect key="frame" x="8" y="32" width="304" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="d96-Z8-Dan"/>
                                                 </connections>
@@ -79,7 +79,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="fln-vN-P7e"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Y3w-k3-cbE"/>
                                                 </connections>
@@ -91,7 +91,7 @@
                                                     <constraint firstAttribute="width" constant="80" id="uQr-2B-C30"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="CPz-XZ-16U"/>
                                                 </connections>
@@ -103,7 +103,7 @@
                                                     <constraint firstAttribute="width" constant="200" id="fQt-d1-e6N"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5fF-4u-fXL"/>
                                                 </connections>
@@ -115,7 +115,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="NTB-D7-cuC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z9P-eq-jH1" userLabel="Longitude TextField">
                                                 <rect key="frame" x="162" y="131" width="150" height="30"/>
@@ -124,7 +124,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="Pkq-5W-UNx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Oy1-5r-TdU" userLabel="Cidade TextField">
                                                 <rect key="frame" x="162" y="65" width="150" height="30"/>
@@ -133,7 +133,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="Sd2-bz-2nZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="i1y-lD-w8d"/>
                                                 </connections>
@@ -161,7 +161,7 @@
                                             <constraint firstItem="v1H-Vf-cUf" firstAttribute="top" secondItem="vdf-rA-mH7" secondAttribute="bottom" constant="3" id="wPC-qP-rML"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y05-BM-wfB" userLabel="Bebidas Dark View">
+                                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y05-BM-wfB" userLabel="Bebidas Dark View">
                                         <rect key="frame" x="0.0" y="323" width="320" height="122"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bebidas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ3-Z0-KTJ" userLabel="Bebidas Label">
