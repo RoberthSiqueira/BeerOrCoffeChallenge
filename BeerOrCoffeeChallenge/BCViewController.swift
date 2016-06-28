@@ -40,7 +40,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     }
     
     func getLocationFromForm() -> Location? {
-        if (locationTextField.text == nil || streetTextField.text == nil || districtTextField.text == nil || cityTextField.text == nil || ufTextField.text == nil || countryTextField.text == nil || latitudeTextField.text == nil || longitudeTextField.text == nil) {
+        if (locationTextField.text == "" || streetTextField.text == "" || districtTextField.text == nil || cityTextField.text == "" || ufTextField.text == "" || countryTextField.text == "" || latitudeTextField.text == "" || longitudeTextField.text == "") {
             Alert(controller: self).show("Por favor, preencha todos os campos")
             return nil
         } else {
@@ -95,14 +95,14 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     }
     
     func clearForm() {
-        locationTextField.text = nil
-        streetTextField.text = nil
-        districtTextField.text = nil
-        cityTextField.text = nil
-        ufTextField.text = nil
-        countryTextField.text = nil
-        latitudeTextField.text = nil
-        longitudeTextField.text = nil
+        locationTextField.text = ""
+        streetTextField.text = ""
+        districtTextField.text = ""
+        cityTextField.text = ""
+        ufTextField.text = ""
+        countryTextField.text = ""
+        latitudeTextField.text = ""
+        longitudeTextField.text = ""
     }
     
     func findLatitudeAndLongitude() {
