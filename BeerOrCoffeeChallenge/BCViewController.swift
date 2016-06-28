@@ -40,7 +40,7 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     }
     
     func getLocationFromForm() -> Location? {
-        if locationTextField == nil || streetTextField == nil || districtTextField == nil || cityTextField == nil || ufTextField == nil || countryTextField == nil || latitudeTextField == nil || longitudeTextField == nil {
+        if (locationTextField.text == nil || streetTextField.text == nil || districtTextField.text == nil || cityTextField.text == nil || ufTextField.text == nil || countryTextField.text == nil || latitudeTextField.text == nil || longitudeTextField.text == nil) {
             Alert(controller: self).show("Por favor, preencha todos os campos")
             return nil
         } else {
@@ -198,6 +198,10 @@ class BCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         beverageValue = row + 1
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 }
 
